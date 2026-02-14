@@ -16,15 +16,14 @@ header {
 input {
   height: 50px;
   border-radius: 10px;
-  border: #388e3c;
 }
 .search-form-input {
   background-color: #e0ffcd;
   padding: 10px;
-  width: 250px;
+  width: 350px;
 }
 .search-form-button {
-  background-color: #388e3c;
+  background-color: #004a2f;
   padding: 10px;
-  width: 100px;
+  width: 200px;
 }
