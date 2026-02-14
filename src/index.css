@@ -9,3 +9,22 @@ body {
   padding: 20px;
   border-radius: 10px;
 }
+header {
+  display: flex;
+  justify-content: center;
+}
+input {
+  height: 50px;
+  border-radius: 10px;
+  border: #388e3c;
+}
+.search-form-input {
+  background-color: #e0ffcd;
+  padding: 10px;
+  width: 250px;
+}
+.search-form-button {
+  background-color: #388e3c;
+  padding: 10px;
+  width: 100px;
+}
