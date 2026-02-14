@@ -8,22 +8,27 @@
   <body>
     <div class="body">
       <header>
-        <form>
-          <input type="search" placeholder="Enter city...." />
-          <input type="submit" value="Search" />
+        <form class="search-form" id="search-form">
+          <input
+            type="search"
+            placeholder="Enter city...."
+            id="search-form-input"
+          />
+          <input type="submit" value="Search" id="search-form-button" />
         </form>
       </header>
-      <h1 class="city">Pretoria</h1>
-      <div>
-        <div>
+      <div class="weather-data">
+        <h1 class="city">Pretoria</h1>
+        <div class="weather-details">
           <p>
             Saturday 23:05, mostly clear <br />
             Humidity: <strong>77 %</strong>, Wind: <strong>16 km/h</strong>
           </p>
         </div>
-        <div>
-          <span>☀️</span>
-          <span class="current-temperature">14°C</span>
+        <div class="temperature-data">
+          <div class="temperature-emoji">☀️</div>
+          <div class="current-temperature">14</div>
+          <div class="temperature-metric"><strong>°C</strong></div>
         </div>
       </div>
       <footer>
