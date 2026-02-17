@@ -5,9 +5,14 @@ body {
   background-color: white;
   margin: 0 auto;
   margin-top: 50px;
-  width: 500px;
-  padding: 20px;
+  width: 600px;
+  padding: 40px;
   border-radius: 10px;
+  .oleo-script-bold {
+    font-family: "Oleo Script", system-ui;
+    font-weight: 700;
+    font-style: normal;
+  }
 }
 header {
   display: flex;
@@ -27,26 +32,47 @@ input {
   padding: 10px;
   width: 100px;
 }
+.search-form-button: hover {
+  background-color: #e0ffcd;
+}
+.weather-details-container {
+  display: flex;
+  justify-content: space-between;
+}
 h1 {
   color: #388e3c;
+  font-size: 38px;
+  line-height: 48px;
+  .oleo-script-bold {
+    font-family: "Oleo Script", system-ui;
+    font-weight: 700;
+    font-style: normal;
+  }
+}
+.weather-details {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
 }
 .weather {
-  position: relative;
-  right: -250px;
-  top: -95px;
+  display: flex;
   font-size: 30px;
   font-weight: bold;
 }
 .weather-icon {
-  font-size: 44px;
+  font-size: 40px;
+  margin-top: 22px;
 }
 .weather-temperature {
-  font-size: 88px;
-  margin-left: 70px;
-  margin-top: 0;
+  font-size: 77px;
+  font-weight: bold;
+  margin-left: 10px;
   font-weight: bold;
 }
 .weather-unit {
   font-size: 28px;
-  margin-left: 180px;
+  margin-top: 16px;
+}
+footer {
+  margin-top: 20px;
 }

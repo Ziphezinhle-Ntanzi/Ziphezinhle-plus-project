@@ -3,13 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Momo+Signature&family=Quintessential&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/index.css" />
     <title>Document</title>
   </head>
   <body>
     <div class="body">
-      <div class="header">
-        <header>
+        <header class="header">
           <form class="search-form" id="search-form">
             <input
               type="search"
@@ -25,9 +30,9 @@
             />
           </form>
         </header>
-      </div>
       <div class="weather-data">
         <h1 class="city">Pretoria</h1>
+        <div class="weather-details-container">
         <div class="weather-details">
           <p>
             Saturday 23:05, mostly clear <br />
@@ -40,8 +45,7 @@
           <div class="weather-unit">°C</div>
         </div>
       </div>
-      <div clas="footer">
-        <footer>
+        <footer class="footer">
           This project is coded by
           <a href="https://github.com/Ziphezinhle-Ntanzi" target="_blank"
             >Ziphezinhle Ntanzi</a
@@ -58,7 +62,6 @@
             >Netlify</a
           >
         </footer>
-      </div>
     </div>
   </body>
 </html>
