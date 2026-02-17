@@ -8,16 +8,24 @@
   </head>
   <body>
     <div class="body">
-      <header>
-        <form class="search-form" id="search-form">
-          <input
-            type="search"
-            placeholder="Enter city...."
-            id="search-form-input"
-          />
-          <input type="submit" value="Search" id="search-form-button" />
-        </form>
-      </header>
+      <div class="header">
+        <header>
+          <form class="search-form" id="search-form">
+            <input
+              type="search"
+              placeholder="Enter city...."
+              id="search-form-input"
+              class="search-form-input"
+            />
+            <input
+              type="submit"
+              value="Search"
+              id="search-form-button"
+              class="search-form-button"
+            />
+          </form>
+        </header>
+      </div>
       <div class="weather-data">
         <h1 class="city">Pretoria</h1>
         <div class="weather-details">
@@ -26,27 +34,31 @@
             Humidity: <strong>77 %</strong>, Wind: <strong>16 km/h</strong>
           </p>
         </div>
-        <div class="temperature-data">
-          <span class="temperature-emoji">☀️</span>
-          <span class="current-temperature">14</span>
-          <span class="temperature-metric"><strong>°C</strong></span>
+        <div class="weather">
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temperature">14</div>
+          <div class="weather-unit">°C</div>
         </div>
       </div>
-      <footer>
-        This is coded by
-        <a href="https://github.com/Ziphezinhle-Ntanzi" target="_blank"
-          >Ziphezinhle Ntanzi</a
-        >, open sourced on
-        <a
-          href="https://github.com/Ziphezinhle-Ntanzi/Ziphezinhle-plus-project"
-          target="_blank"
-          >Github</a
-        >
-        and hosted on
-        <a href="https://ziphezinhle-plus-project.netlify.app/" target="_blank"
-          >Netlify</a
-        >
-      </footer>
+      <div clas="footer">
+        <footer>
+          This project is coded by
+          <a href="https://github.com/Ziphezinhle-Ntanzi" target="_blank"
+            >Ziphezinhle Ntanzi</a
+          >, open sourced on
+          <a
+            href="https://github.com/Ziphezinhle-Ntanzi/Ziphezinhle-plus-project"
+            target="_blank"
+            >Github</a
+          >
+          and hosted on
+          <a
+            href="https://ziphezinhle-plus-project.netlify.app/"
+            target="_blank"
+            >Netlify</a
+          >
+        </footer>
+      </div>
     </div>
   </body>
 </html>

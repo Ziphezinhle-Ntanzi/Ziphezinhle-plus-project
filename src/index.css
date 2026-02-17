@@ -1,23 +1,7 @@
 body {
   background-color: #e0ffcd;
 }
-.header {
-  background-color: white;
-  margin: 0 auto;
-  margin-top: 50px;
-  width: 500px;
-  padding: 20px;
-  border-radius: 10px;
-}
-.weather-data {
-  background-color: white;
-  margin: 0 auto;
-  margin-top: 50px;
-  width: 500px;
-  padding: 20px;
-  border-radius: 10px;
-}
-.footer {
+.body {
   background-color: white;
   margin: 0 auto;
   margin-top: 50px;
@@ -39,10 +23,30 @@ input {
   width: 350px;
 }
 .search-form-button {
-  color: #004a2f;
+  background-color: #388e3c;
   padding: 10px;
-  width: 200px;
+  width: 100px;
 }
 h1 {
-  color: #004a2f;
+  color: #388e3c;
+}
+.weather {
+  position: relative;
+  right: -250px;
+  top: -95px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.weather-icon {
+  font-size: 44px;
+}
+.weather-temperature {
+  font-size: 88px;
+  margin-left: 70px;
+  margin-top: 0;
+  font-weight: bold;
+}
+.weather-unit {
+  font-size: 28px;
+  margin-left: 180px;
 }
