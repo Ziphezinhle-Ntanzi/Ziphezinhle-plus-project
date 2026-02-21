@@ -1,0 +1,61 @@
+function searchCityButton(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-form-input");
+
+  searchCity(searchInput.value);
+}
+
+function searchCity(city) {
+  let apiKey = "c05btfeob3a920443576ed34383f0573";
+  let apiUrl =
+    "https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}";
+  axios.get(apiUrl).then(updateWeather);
+}
+
+function updateWeather(response) {
+  let temperatureElement = document.querySelector("#weather-temperature");
+  let temperature = response.data.temperature.current;
+  let cityElement = document.querySelector("#current-city");
+  let descriptionElement = document.querySelector("#weather-description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let timeElement = document.querySelector("#date-and-time");
+  let date = new Date(response.data.time * 1000);
+  let iconElement = document.querySelector("#weather-icon");
+
+  cityElement.innerHTML = response.data.city;
+  timeElement.innerHTML = formatDate(date);
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = "${response.data.temperature.humidity}%";
+  windElement.innerHTML = "${response.data.wind.speed}km/h";
+  temperatureElement.innerHTML = Math.round(temperature);
+  iconElement.innerHTML =
+    '<img src="${response.data.condition.icon_url}" class="weather-icon"/>';
+}
+
+function formatDate(date) {
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+  let day = days[date.getDay()];
+  if (minutes < 10) {
+    minutes = "0${hours}";
+  }
+  if (hours < 10) {
+    hours = "0${hours}";
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return "${day} ${hour}:${minutes}";
+}
+
+let searchFormElement = document.querySelector("#search-form");
+searchFormElement.addEventListener("submit", searchCityButton);
+
+searchCity("Pretoria");

@@ -3,60 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Momo+Signature&family=Quintessential&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/index.css" />
-    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Ziphezinhle Ntanzi</title>
   </head>
   <body>
     <div class="body">
-        <header class="header">
-          <form class="search-form" id="search-form">
-            <input
-              type="search"
-              placeholder="Enter city...."
-              id="search-form-input"
-              class="search-form-input"
-            />
-            <input
-              type="submit"
-              value="Search"
-              id="search-form-button"
-              class="search-form-button"
-            />
-          </form>
-        </header>
+      <header class="header">
+        <form class="search-form" id="search-form">
+          <input
+            type="search"
+            placeholder="Enter city...."
+            required
+            id="search-form-input"
+            class="search-form-input"
+          />
+          <input
+            type="submit"
+            value="Search"
+            id="search-form-button"
+            class="search-form-button"
+          />
+        </form>
+      </header>
 
       <div class="weather-data">
-        <h1 class="city">Pretoria</h1>
+        <h1 class="current-city" id="current-city"></h1>
         <div class="weather-details-container">
-        <div class="weather-details">
-          <p>
-            Saturday 23:05, mostly clear <br />
-            Humidity: <strong>77 %</strong>, Wind: <strong>16 km/h</strong>
-          </p>
+          <div class="weather-details">
+            <p>
+              <span id="date-and-time"></span>,
+              <span id="weather-description"></span> <br />
+              Humidity: <strong id="humidity"></strong>, Wind:
+              <strong id="wind"></strong>
+            </p>
+          </div>
+          <div class="weather">
+            <div class="weather-icon" id="weather-icon"></div>
+            <div class="weather-temperature" id="weather-temperature"></div>
+            <div class="weather-unit" id="weather-unit">°C</div>
+          </div>
         </div>
-        <div class="weather">
-          <div class="weather-icon">☀️</div>
-          <div class="weather-temperature">14</div>
-          <div class="weather-unit">°C</div>
-        </div>
-      </div>
-        <footer class="footer">
-          This project is coded by
-          <a href="https://github.com/Ziphezinhle-Ntanzi" target="_blank"
-            >Ziphezinhle Ntanzi</a
-          >, open sourced on
-          <a
-            href="https://github.com/Ziphezinhle-Ntanzi/Ziphezinhle-plus-project"
-            target="_blank"
-            >Github</a
-          >
-          and hosted on
-          <a
-            href="https://ziphezinhle-plus-project.netlify.app/"
-            target="_blank"
-            >Netlify</a
-          >
-        </footer>
+      <footer class="footer">
+        This project is coded by
+        <a href="https://github.com/Ziphezinhle-Ntanzi" target="_blank"
+          >Ziphezinhle Ntanzi</a
+        >, open sourced on
+        <a
+          href="https://github.com/Ziphezinhle-Ntanzi/Ziphezinhle-plus-project"
+          target="_blank"
+          >Github</a
+        >
+        and hosted on
+        <a href="https://ziphezinhle-plus-project.netlify.app/" target="_blank"
+          >Netlify</a
+        >
+      </footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
