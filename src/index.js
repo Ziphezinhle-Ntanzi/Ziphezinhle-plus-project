@@ -15,7 +15,7 @@ function searchCity(city) {
 function updateWeather(response) {
   let temperatureElement = document.querySelector("#weather-temperature");
   let temperature = response.data.temperature.current;
-  let cityElement = document.querySelector("#current-city");
+  let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#weather-description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -59,3 +59,4 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchCityButton);
 
 searchCity("Pretoria");
+console.log(axios);
