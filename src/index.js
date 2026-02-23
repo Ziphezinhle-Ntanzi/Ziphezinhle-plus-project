@@ -7,8 +7,7 @@ function searchCityButton(event) {
 
 function searchCity(city) {
   let apiKey = "c05btfeob3a920443576ed34383f0573";
-  let apiUrl =
-    "https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
   axios.get(apiUrl).then(updateWeather);
 }
 
@@ -26,23 +25,13 @@ function updateWeather(response) {
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
-  humidityElement.innerHTML = "${response.data.temperature.humidity}%";
-  windElement.innerHTML = "${response.data.wind.speed}km/h";
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  windElement.innerHTML = `${response.data.wind.speed}km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
-  iconElement.innerHTML =
-    '<img src="${response.data.condition.icon_url}" class="weather-icon"/>';
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon"/>`;
 }
 
 function formatDate(date) {
-  let minutes = date.getMinutes();
-  let hours = date.getHours();
-  let day = days[date.getDay()];
-  if (minutes < 10) {
-    minutes = "0${hours}";
-  }
-  if (hours < 10) {
-    hours = "0${hours}";
-  }
   let days = [
     "Sunday",
     "Monday",
@@ -52,11 +41,21 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
-  return "${day} ${hour}:${minutes}";
+
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+  let day = days[date.getDay()];
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
+  return `${day} ${hours}:${minutes}`;
 }
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchCityButton);
 
 searchCity("Pretoria");
-console.log(axios);
