@@ -54,8 +54,27 @@ function formatDate(date) {
 
   return `${day} ${hours}:${minutes}`;
 }
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thur", "Fri", "Sat", "Sun"];
+  let forecastHtml = "";
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      ` <div class="weather-forecast-date"> 
+      <div class="weather-forecast-day">${day}</div> 
+      <div class="weather-forecast-icon">🌤️</div> 
+      <div class="weather-forecast-temperatures"> 
+      <div class="weather-forecast-temperature"> <strong>15º</strong></div> 
+      <div class="weather-forecast-temperature">9º</div> 
+      </div>
+      `;
+  });
+  let forecastElement = document.querySelector("#weather-forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchCityButton);
 
 searchCity("Pretoria");
+displayForecast();
