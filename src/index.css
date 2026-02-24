@@ -1,11 +1,11 @@
 body {
-  background-color: #e0ffcd;
+  background-color: rgb(189, 207, 164, 0.4);
 }
 .body {
   background-color: white;
   margin: 0 auto;
   margin-top: 50px;
-  width: 700px;
+  max-width: 600px;
   padding: 40px;
   border-radius: 10px;
   .oleo-script-bold {
@@ -23,7 +23,7 @@ input {
   border-radius: 10px;
 }
 .search-form-input {
-  background-color: #e0ffcd;
+  background-color: rgb(189, 207, 164, 0.4);
   padding: 10px;
   width: 350px;
 }
