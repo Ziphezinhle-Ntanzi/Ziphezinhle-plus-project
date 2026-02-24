@@ -7,7 +7,7 @@ function searchCityButton(event) {
 
 function searchCity(city) {
   let apiKey = "c05btfeob3a920443576ed34383f0573";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(updateWeather);
 }
 
@@ -29,6 +29,8 @@ function updateWeather(response) {
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon"/>`;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -54,22 +56,39 @@ function formatDate(date) {
 
   return `${day} ${hours}:${minutes}`;
 }
-function displayForecast() {
-  let days = ["Tue", "Wed", "Thur", "Fri", "Sat", "Sun"];
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+function getForecast(city) {
+  let apiKey = "c05btfeob3a920443576ed34383f0573";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
+function displayForecast(response) {
   let forecastHtml = "";
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      ` <div class="weather-forecast-date"> 
-      <div class="weather-forecast-day">${day}</div> 
-      <div class="weather-forecast-icon">🌤️</div> 
+
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        ` <div class="weather-forecast-date"> 
+      <div class="weather-forecast-day">${formatDay(day.time)}</div> 
+      <img src="${day.condition.icon_url}" class="weather-forecast-icon"/>
       <div class="weather-forecast-temperatures"> 
-      <div class="weather-forecast-temperature"> <strong>15º</strong></div> 
-      <div class="weather-forecast-temperature">9º</div> 
+      <div class="weather-forecast-temperature"> <strong>${Math.round(
+        day.temperature.maximum
+      )}º</strong></div> 
+      <div class="weather-forecast-temperature">${Math.round(
+        day.temperature.minimum
+      )}º</div> 
       </div>
       `;
+    }
   });
-  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
@@ -77,4 +96,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchCityButton);
 
 searchCity("Pretoria");
-displayForecast();
